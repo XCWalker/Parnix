@@ -59,7 +59,7 @@ body {
     margin: 0;
 
     /* scroll */
-    scroll-behavior: smooth;    
+    scroll-behavior: smooth;
     scroll-padding-top: 50px;
 
     /* background */
@@ -77,6 +77,10 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+svg path {
+    /* color */
+    color: inherit;
+}
 /* header */
 .navigation-header {
     /* sizing */
@@ -140,8 +144,11 @@ body {
     display: none;
 
     /* styling */
-    color: inherit;
+    color: var(--header-text-color);
+    fill: currentColor;
     border: var(--header-nav-border-width) var(--header-background) solid;
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
 }
 
 /* nav button hover states */
@@ -151,13 +158,13 @@ body {
 
 .nav-btn:active {
     background-color: var(--header-text-color);
-    color: var(--background-color);
+    color: var(--header-background);
     border: var(--header-nav-border-width) currentColor solid;
 }
 
 .nav-btn.open {
     background-color: var(--header-text-color);
-    color: var(--background-color);
+    color: var(--header-background);
 }
 
 .nav-container {
@@ -212,13 +219,13 @@ body {
 
 .nav-item:active {
     background-color: var(--header-text-color);
-    color: var(--background-color);
+    color: var(--header-background);
     /* border: var(--header-nav-border-width) currentColor solid; */
 }
 
 .nav-item.open {
     background-color: var(--header-text-color);
-    color: var(--background-color);
+    color: var(--header-background);
 }
 
 .nav-link {
@@ -258,6 +265,7 @@ body {
     transform-origin: right;
     transition: transform 0.2s ease-in-out;
 }
+
 .nav-item:hover .hover-indicator {
     transform: scaleX(1);
     transform-origin: left;
@@ -265,6 +273,11 @@ body {
 
 
 @media only screen and (max-width: 650px) {
+    html {
+        /* scroll */
+        scroll-padding-top: 90px;
+    }
+
     .nav-btn {
         /* display */
         display: flex;
@@ -310,7 +323,11 @@ body {
         justify-content: left;
     }
 
-    .nav-item {}
+    .nav-item {
+        /* styling */
+        border-top-left-radius: var(--border-radius);
+        border-top-right-radius: var(--border-radius);
+    }
 }
 
 /* footer */
@@ -321,7 +338,7 @@ footer {
     /* grid */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
-    gap: calc(var(--header-padding) * 2 );
+    gap: calc(var(--header-padding) * 2);
 
     /* styling */
     background: var(--header-background);
