@@ -24,7 +24,7 @@
 </head>
 
 <body>
-    <header class="navigation-header hidden">
+    <header class="navigation-header">
         <div class="navigation-container">
             <svg class="nav-logo" aria-label="Drive Music" version="1.1" viewBox="0 0 512 74.793"
                 xmlns="http://www.w3.org/2000/svg">
@@ -40,19 +40,23 @@
                     <path
                         d="m1 15h16c0.55 0 1-0.45 1-1s-0.45-1-1-1h-16c-0.55 0-1 0.45-1 1s0.45 1 1 1zm0-5h16c0.55 0 1-0.45 1-1s-0.45-1-1-1h-16c-0.55 0-1 0.45-1 1s0.45 1 1 1zm-1-6c0 0.55 0.45 1 1 1h16c0.55 0 1-0.45 1-1s-0.45-1-1-1h-16c-0.55 0-1 0.45-1 1z" />
                 </svg></a>
-            <nav id="nav" class="nav-container hidden">
+            <nav id="nav" class="nav-container">
                 <ul class="nav-list">
                     <li class="nav-item">
                         <a class="nav-link" href="#about">About</a>
+                        <div class="hover-indicator"></div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#pricing">Pricing</a>
+                        <div class="hover-indicator"></div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
+                        <div class="hover-indicator"></div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#youtube">YouTube</a>
+                        <div class="hover-indicator"></div>
                     </li>
                 </ul>
             </nav>
@@ -88,20 +92,20 @@
                         Free tea and coffee is available.</p>
                 </div>
                 <div class="table">
-                    <div class="table-line header">
+                    <div class="table-line header" id="line1">
                         <div class="table-cell">Rate</div>
-                        <div class="table-cell">Price</div>
+                        <div class="table-cell" id="cell2">Price</div>
                     </div>
-                    <div class="table-line">
+                    <div class="table-line" id="line2">
                         <div class="table-cell">Hourly</div>
-                        <div class="table-cell">£30</div>
+                        <div class="table-cell" id="cell4">£30</div>
                     </div>
-                    <div class="table-line">
+                    <div class="table-line" id="line3">
                         <div class="table-cell">Daily Rate (8 Hours)</div>
                         <div class="table-cell">£POA</div>
                     </div>
-                    <div class="table-line">
-                        <div class="table-cell">5 Days</div>
+                    <div class="table-line" id="line4">
+                        <div class="table-cell" id="cell9">5 Days</div>
                         <div class="table-cell">£POA</div>
                     </div>
                 </div>
@@ -156,6 +160,8 @@
                     </svg>
                 </a>
             </div>
+            <div class="footer-divider"></div>
+            <a href="https://www.xcwalker.dev">Website made by: XCWalker.dev</a>
         </div>
         <div class="footer-container">
             <h2 class="footer-heading">Contact</h2>
