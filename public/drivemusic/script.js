@@ -30,20 +30,6 @@ function onLoadYoutube() {
         });
 
         request.execute(function (response) {
-            if (response.items.length == null || response.items.length == 0) {
-                const card = vodTemplate.content.cloneNode(true).children[0];
-                const title = card.querySelector("[data-youtube-title]");
-                const date = card.querySelector("[data-youtube-date]");
-                const image = card.querySelector("[data-youtube-image]");
-                title.textContent = "No youtubes";
-                date.textContent = "Sorry, come back soon";
-                image.src = "https://media.istockphoto.com/vectors/shrugmug-emoji-vector-id872831978?k=20&m=872831978&s=612x612&w=0&h=K_oWfARLQLn4H5m0Fh88Xv342wmwukkiMbZvnsnNiqU=";
-
-                youtubeContainer.append(card);
-                console.error("API quota met")
-            }
-
-
             for (var i = 0; i < response.items.length; i++) {
                 const card = youtubeTemplate.content.cloneNode(true).children[0];
                 const title = card.querySelector("[data-youtube-title]");
