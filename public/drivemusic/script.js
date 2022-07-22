@@ -8,6 +8,10 @@ function showNav() {
     }
 }
 
+function mailTo(id, user, domain, subject) {
+    document.querySelector("#" + id).href = "mailto:" + user + "@" + domain + "?Subject=" + subject;
+}
+
 // youtube api
 const apiKey = "AIzaSyBfvHpycrZaRpJ9gNQ3KC5DzbSakwi1GyI"; //CHANGE ME!!!
 const playlistID = "PLY3WBignFwAYor6APrIeJjXfgYdtfKCGZ";
