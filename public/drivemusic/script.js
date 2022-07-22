@@ -39,7 +39,7 @@ function onLoadYoutube() {
                 title.textContent = response.items[i].snippet.title;
                 date.textContent = new Date(response.items[i].snippet.publishedAt).toDateString();
                 image.src = response.items[i].snippet.thumbnails.high.url;
-                link.href = "https://www.youtube.com/watch?" + response.items[i].snippet.resourceId.videoId;
+                link.href = "https://www.youtube.com/watch?v=" + response.items[i].snippet.resourceId.videoId;
 
                 youtubeContainer.append(card);
             }
