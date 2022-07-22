@@ -15,9 +15,9 @@ html {
 @media (prefers-color-scheme: light) {
     html {
         /* Colours */
-        --primary-color: rgb(249, 249, 249);
-        --secondary-color: #f2f2f2;
-        --tertiary-color: #dedede;
+        --primary-color: #e7e7e7;
+        --secondary-color: #dedede;
+        --tertiary-color: #cececb;
 
         /* Text Colours */
         --primary-text-color: black;
@@ -81,6 +81,7 @@ svg path {
     /* color */
     color: inherit;
 }
+
 /* header */
 .navigation-header {
     /* sizing */
@@ -204,7 +205,6 @@ svg path {
 
     /* sizing */
     height: 100%;
-    margin-left: -1px;
     padding: var(--header-padding) 0;
 
     /* styling */
@@ -414,8 +414,8 @@ footer {
 }
 
 /* sections */
-section:not(:first-of-type) {
-    margin-top: 100px;
+section {
+    margin-bottom: 100px;
 }
 
 .container {
@@ -553,4 +553,175 @@ p.contact-info {
 .table-cell#cell9 {
     /* styling */
     border-bottom-right-radius: var(--border-radius);
+}
+
+/* youtube */
+.youtube-container {
+    /* grid */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+    gap: calc(var(--header-padding) * 2);
+
+    /* spacing */
+    margin: calc(var(--header-padding) / 2) var(--header-padding);
+}
+
+.youtube-item {
+    /* sizing */
+    width: min(300px, 100%);
+}
+
+.youtube-image,
+.youtube-link {
+    /* display */
+    display: block;
+
+    /* sizing */
+    width: 100%;
+    aspect-ratio: 16/9;
+
+    /* image */
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.youtube-link {    
+    /* position */
+    position: relative;
+}
+
+.youtube-link-icon {
+    /* position */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    /* sizing */
+    width: 25%;
+
+    /* color */
+    fill: white;
+
+    /* animation */
+    transition: fill 0.5s ease-in-out;
+}
+
+.youtube-hover {
+    /* position */
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    /* sizing */
+    width: 100%;
+    height: 100%;
+
+    /* animation */
+    transition: background-color 0.5s ease-in-out;
+}
+
+.youtube-open-in {
+    /* position */
+    position: absolute;
+    top: var(--header-padding);
+
+    /* sizing */
+    margin: 0;
+    width: 100%;
+
+    /* text */
+    text-align: center;
+    font-size: 14px;
+
+    /* color */
+    color: transparent;
+
+    /* animation */
+    transition: color 0.5s ease-in-out;
+}
+
+.youtube-open-in-new-tab {
+    /* position */
+    position: absolute;
+    top: var(--header-padding);
+    right: var(--header-padding);
+
+    /* sizing */
+    width: 6.5%;
+
+    /* color */
+    fill: transparent;
+
+    /* animation */
+    transition: fill 0.5s ease-in-out;
+}
+
+.youtube-link:hover .youtube-hover,
+.youtube-link:focus .youtube-hover,
+.youtube-link:focus-visible .youtube-hover {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.youtube-link:hover .youtube-link-icon,
+.youtube-link:focus .youtube-link-icon,
+.youtube-link:focus-visible .youtube-link-icon {
+    fill: #FF4B04;
+}
+.youtube-link:hover .youtube-open-in,
+.youtube-link:focus .youtube-open-in,
+.youtube-link:focus-visible .youtube-open-in {
+    color: white;
+}
+.youtube-link:hover .youtube-open-in-new-tab,
+.youtube-link:focus .youtube-open-in-new-tab,
+.youtube-link:focus-visible .youtube-open-in-new-tab {
+    fill: white;
+}
+
+.youtube-link:active .youtube-link-icon {
+    fill: white;
+    transition-duration: 0.1s;
+}
+
+.youtube-title {
+    /* display */
+    display: inline;
+
+    /* spacing */
+    margin: 0;
+
+    /* text */
+    line-height: 1.1;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.youtube-date {
+    /* display */
+    display: inline;
+
+    /* spacing */
+    margin: 0;
+
+    /* text */
+    line-height: 1.1;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.youtube-description {
+    /* truncating */
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+    /* spacing */
+    margin: 0;
+
+    /* text */
+    line-height: 1.1;
+    font-size: 14px;
+    white-space: pre-line;
 }
