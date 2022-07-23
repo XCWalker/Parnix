@@ -1,0 +1,204 @@
+/** Topbar **/
+#topbar {
+    /* sizing */
+    height: var(--topbar-height);
+}
+
+.topbar {
+    /* position */
+    position: fixed;
+    top: var(--body-margin);
+    left: var(--body-margin);
+    right: var(--body-margin);
+
+    /* sizing */
+    height: var(--topbar-height);
+    width: calc(100vw - (var(--body-margin) * 2)) - (var(--topbar-padding) * 2);
+    padding: var(--topbar-padding);
+
+    /* styling */
+    background-color: var(--secondary-color);
+    border: var(--topbar-border-width) solid var(--tertiary-color);
+    border-radius: var(--topbar-radius);
+    color: var(--primary-text-color);
+    fill: currentColor;
+
+    /* flex */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--topbar-gap);
+}
+
+.topbar * {
+    /* sizing */
+    height: 100%;
+    min-width: 32px;
+
+    /* flex */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--topbar-gap);
+}
+
+.topbar a {
+    /* sizing */
+    display: block;
+    aspect-ratio: 1/1;
+    padding: calc(var(--topbar-padding) / 1.5);
+
+    /* styling */
+    border-radius: var(--topbar-radius);
+    color: var(--primary-text-color);
+    fill: currentColor;
+
+    /* flex */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.topbar a:hover,
+.topbar a:focus,
+.topbar a:focus-visible {
+    background-color: var(--tertiary-color);
+    outline: var(--topbar-border-width) solid var(--tertiary-color);
+}
+
+.topbar a:active {
+    background-color: transparent;
+    color: var(--tertiary-color);
+    outline: var(--topbar-border-width) solid var(--tertiary-color);
+}
+
+/* App Draw */
+#app-draw {
+    /* position */
+    position: fixed;
+    top: calc(var(--topbar-height) + (var(--body-margin) * 2));
+    right: var(--body-margin);
+
+    /* animation & hiding */
+    transform: translateX(200%);
+    transition: transform 1s;
+}
+
+#menu-draw {
+    /* position */
+    position: fixed;
+    top: calc(var(--topbar-height) + (var(--body-margin) * 2));
+    left: var(--body-margin);
+
+    /* animation & hiding */
+    transform: translateX(-200%);
+    transition: transform 1s;
+}
+
+.draw.visible {
+    transform: translateX(0%) !important;
+}
+
+.apps {
+    /* sizing */
+    padding: var(--topbar-padding);
+    max-width: calc(100vw - var(--topbar-padding));
+
+    /* styling */
+    background-color: var(--secondary-color);
+    border: var(--topbar-border-width) solid var(--tertiary-color);
+    border-radius: var(--topbar-radius);
+
+    /* flex */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--topbar-gap);
+}
+
+.app {
+    /* sizing */
+    padding: 4px;
+    height: calc(var(--topbar-height) / 1.5);
+    width: 100%;
+
+    /* flex */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--topbar-gap);
+
+    /* text styling */
+    color: var(--primary-text-color);
+    fill: currentColor;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 1;
+
+    /* styling */
+    border-radius: var(--topbar-radius);
+}
+
+.app:hover,
+.app:focus,
+.app:focus-visible {
+    background-color: var(--tertiary-color);
+    outline: var(--topbar-border-width) solid var(--tertiary-color);
+}
+
+.app:active {
+    background-color: transparent;
+    color: var(--tertiary-color);
+    outline: var(--topbar-border-width) solid var(--tertiary-color);
+}
+
+.app * {
+    height: 100%;
+    position: relative;
+}
+
+.app div * {
+    /* text */
+    font-size: inherit;
+    line-height: inherit;
+
+    /* position */
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+
+    /* sizing */
+    height: fit-content;
+
+    /* transition */
+    transition: opacity 0.5s;
+}
+
+.app div .sizing {
+    /* text */
+    font-size: inherit;
+    line-height: 0;
+
+    /* position */
+    position: relative;
+
+    /* sizing */
+    height: fit-content;
+}
+
+.app h2 {
+    opacity: 0;
+}
+
+.app:hover h1 {
+    opacity: 0;
+}
+
+.app:hover h2 {
+    opacity: 1;
+    content: attr(data-hover-txt);
+}

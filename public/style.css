@@ -1,0 +1,54 @@
+/** Variables **/
+html {
+    /* border-radius */
+    --border-radius: var(--header-padding);
+
+    /* width */
+    --page-width: min(960px, calc(100% - 60px));
+}
+
+/** Styling **/
+body {
+    /* Style */
+    background-color: var(--primary-color);
+
+    /* Overflow Prevention */
+    overflow-x: hidden;
+    min-height: calc(100vh - (var(--body-margin * 2)));
+    max-width: calc(100vw - (var(--body-margin * 2)));
+    margin: var(--body-margin);
+
+    /* Page Positioning */
+    position: relative;
+
+    /* Flex */
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+}
+
+*,
+*::before,
+*::after {
+    /* changes sizing */
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* sections */
+section {
+    margin-bottom: 100px;
+}
+
+.container {
+    /* sizing */
+    width: var(--page-width);
+    margin: 0 auto;
+
+    /* position */
+    position: relative;
+}
