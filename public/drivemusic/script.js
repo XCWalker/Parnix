@@ -9,7 +9,7 @@ function showNav() {
 }
 
 // youtube api
-const apiKey = "AIzaSyBfvHpycrZaRpJ9gNQ3KC5DzbSakwi1GyI"; //CHANGE ME!!!
+const apiKey = process.env.GOOGLE_RELEASE_API_KEY; //CHANGE ME!!!
 const playlistID = "PLY3WBignFwAYor6APrIeJjXfgYdtfKCGZ";
 
 const youtubeTemplate = document.querySelector("[data-youtube-template]");
