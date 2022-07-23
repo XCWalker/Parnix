@@ -7,8 +7,12 @@ html {
     /* border-radius */
     --border-radius: var(--header-padding);
 
+    /* width */
+    --page-width: min(960px, calc(100% - 60px));
+
     /* sections */
     --accent-color: #FF4B04;
+    --alt-accent-color: #2b5797;
 }
 
 
@@ -106,7 +110,7 @@ svg path {
 .navigation-container {
     /* sizing */
     height: 100%;
-    width: min(960px, calc(100% - 60px));
+    width: var(--page-width);
     padding: 0 var(--header-padding);
 
     /* styling */
@@ -276,6 +280,9 @@ svg path {
     html {
         /* scroll */
         scroll-padding-top: 90px;
+
+        /* width */
+    --page-width: min(960px, calc(100% - 30px));
     }
 
     .nav-btn {
@@ -312,7 +319,7 @@ svg path {
 
     .nav-list {
         /* sizing */
-        width: min(960px, calc(100% - 60px));
+        width: var(--page-width);
 
         margin: 0 auto;
 
@@ -420,7 +427,7 @@ section {
 
 .container {
     /* sizing */
-    width: min(960px, calc(100% - 60px));
+    width: var(--page-width);
     margin: 0 auto;
 
     /* position */
@@ -556,6 +563,56 @@ p.contact-info {
 }
 
 /* youtube */
+.youtube-account-link {
+    /* position */
+    position: relative;
+
+    /* sizing */
+    width: min(300px, 100%);
+    height: 40px;
+    padding: var(--header-padding);
+
+    /* flex */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* styling */
+    fill: currentColor;
+    color: var(--primary-text-color);
+    background-color: var(--header-background);
+    border-radius: var(--border-radius);
+
+    /* text */
+    text-decoration: none;
+    font-weight: 600;
+
+    /* transition */
+    transition: background-color 0.2s ease-in-out, color 0.1s ease-in-out;
+}
+
+.youtube-account-link svg {
+    /* position */
+    position: absolute;
+    top: var(--header-padding);
+    left: var(--header-padding);
+
+    /* sizing */
+    height: calc(100% - (var(--header-padding) * 2));
+}
+
+.youtube-account-link:hover,
+.youtube-account-link:focus,
+.youtube-account-link:focus-visible {
+    background-color: #FF4B04;
+}
+
+.youtube-account-link:active {
+    background-color: var(--primary-text-color);
+    color: #FF4B04;
+    fill: #FF4B04;
+}
+
 .youtube-container {
     /* grid */
     display: grid;
