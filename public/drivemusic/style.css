@@ -570,6 +570,7 @@ p.contact-info {
     width: min(300px, 100%);
     height: 40px;
     padding: var(--header-padding);
+    margin: calc(var(--header-padding) / 2) var(--header-padding);
 
     /* flex */
     display: flex;
