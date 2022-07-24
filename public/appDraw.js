@@ -51,23 +51,6 @@ fetch("https://raw.githubusercontent.com/XCWalker/Default/main/app-switcher.json
             if (app.title == "Parnix") {
                 document.title = app.title + " | " + app.hoverTXT + " | XCWalker";
                 document.querySelector('meta[name="description"]').setAttribute("content", app.description);
-                if (appContainer != null) {
-                    app.pages.map(redirect => {
-                        const card = menuTemplate.content.cloneNode(true).children[0];
-                        const title = card.querySelector("[data-menu-title]");
-                        const sizingTitle = card.querySelector("[data-menu-title]");
-                        const hoverTitle = card.querySelector("[data-menu-hover-title-sizing]");
-                        const sizingHoverTitle = card.querySelector("[data-menu-hover-title-sizing]");
-
-                        title.textContent = redirect.navTXT;
-                        sizingTitle.textContent = redirect.navTXT;
-                        card.href = redirect.redirectURL;
-                        hoverTitle.textContent = redirect.navHoverTXT;
-                        sizingHoverTitle.textContent = redirect.navHoverTXT;
-
-                        menuContainer.append(card);
-                    })
-                }
             }
 
             return { app }
