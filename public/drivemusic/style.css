@@ -282,7 +282,7 @@ svg path {
         scroll-padding-top: 90px;
 
         /* width */
-    --page-width: min(960px, calc(100% - 30px));
+        --page-width: min(960px, calc(100% - 30px));
     }
 
     .nav-btn {
@@ -334,6 +334,14 @@ svg path {
         /* styling */
         border-top-left-radius: var(--border-radius);
         border-top-right-radius: var(--border-radius);
+    }
+
+    .youtube-container {
+        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    }
+
+    .youtube-account-link {
+        width: 100%;
     }
 }
 
@@ -482,6 +490,7 @@ p.contact-info {
     font-size: 15px;
     font-weight: 300;
 }
+
 /* table */
 .side-by-side {
     /* flex */
