@@ -335,13 +335,21 @@ svg path {
         border-top-left-radius: var(--border-radius);
         border-top-right-radius: var(--border-radius);
     }
+}
 
+@media only screen and (max-width: 699px) {
     .youtube-container {
         grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+
     }
 
-    .youtube-account-link,
-    .youtube-item {
+    youtube-item {
+        width: 100% !important;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .youtube-account-link {
         width: 100% !important;
     }
 }
