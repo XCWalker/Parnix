@@ -340,7 +340,8 @@ svg path {
         grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
     }
 
-    .youtube-account-link {
+    .youtube-account-link,
+    .youtube-link {
         width: 100% !important;
     }
 }
@@ -633,6 +634,9 @@ p.contact-info {
 }
 
 .youtube-item {
+    /* sizing */
+    width: min(300px, 100%);
+
     /* flex */
     display: flex;
     flex-direction: column;
