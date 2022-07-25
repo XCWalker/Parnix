@@ -342,10 +342,6 @@ svg path {
         grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
 
     }
-
-    youtube-item {
-        width: 100% !important;
-    }
 }
 
 @media only screen and (max-width: 800px) {
@@ -641,9 +637,11 @@ p.contact-info {
     margin: calc(var(--header-padding) / 2) var(--header-padding);
 }
 
+
+
 .youtube-item {
     /* sizing */
-    width: min(300px, 100%);
+    width: 100%;
 
     /* flex */
     display: flex;
@@ -729,7 +727,7 @@ p.contact-info {
     right: var(--header-padding);
 
     /* sizing */
-    width: 5%;
+    width: 15px;
 
     /* color */
     fill: transparent;
