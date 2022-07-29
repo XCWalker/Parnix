@@ -53,12 +53,12 @@ html {
 }
 
 /* page setup */
-html,
 body {
     /* sizing */
     width: 100%;
-    min-height: 100%;
+    height: 100%;
     overflow-x: hidden;
+    overflow-y: scroll;
 
     margin: 0;
 
@@ -68,6 +68,10 @@ body {
 
     /* background */
     background: var(--primary-color);
+}
+
+body.noscroll {
+    overflow: hidden !important;
 }
 
 *,
@@ -276,7 +280,7 @@ svg path {
 }
 
 
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 700px) {
     html {
         /* scroll */
         scroll-padding-top: 90px;
@@ -398,6 +402,9 @@ footer {
 }
 
 .social {
+    /* position */
+    position: relative;
+
     /* sizing */
     width: 50px;
     height: 50px;
@@ -407,11 +414,7 @@ footer {
     fill: currentColor;
     color: inherit;
     border-radius: var(--border-radius);
-
-    /* flex */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    overflow: hidden;
 
     /* animation */
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
@@ -431,8 +434,37 @@ footer {
 .social svg {
     max-width: 100%;
     max-height: 100%;
+
+    /* position */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
+.social-background {
+    /* position */
+    position: absolute;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    transform: none !important;
+
+    /* sizing */
+    width: 100%;
+    width: 100%;
+
+    /* styling */
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.social:hover .social-background,
+.social:focus .social-background,
+.social:focus-visible .social-background {
+    opacity: 1;
+}
 /* sections */
 section {
     margin-bottom: 100px;
@@ -573,6 +605,151 @@ p.contact-info {
 .table-cell#cell9 {
     /* styling */
     border-bottom-right-radius: var(--border-radius);
+}
+
+/* gallery & lightbox */
+.gallery {
+    /* grid */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+    gap: calc(var(--header-padding) * 2);
+
+    /* spacing */
+    margin: calc(var(--header-padding) / 2) var(--header-padding);    
+}
+
+.gallery-item {
+    /* position */
+    position: relative;
+
+    /* sizing */
+    width: 100%;
+    aspect-ratio: 1/1;
+
+    /* flex */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* styling */
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    background-color: var(--header-background);
+}
+
+.gallery-item img {
+    /* sizing */
+    max-width: 100%;
+    max-height: 100%;
+
+    /* image */
+    object-fit: contain;
+}
+
+.expand {
+    /* position */
+    position: absolute;
+    top: var(--header-padding);
+    right: var(--header-padding);
+
+    /* sizing */
+    width: 15px;
+
+    /* fill */
+    fill: transparent;
+    transition: fill 0.5s ease-in-out;
+}
+
+.gallery-item:hover .expand,
+.gallery-item:focus .expand,
+.gallery-item:focus-visible .expand {
+    fill: white;
+}
+
+.gallery-cover {
+    /* position */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    /* transition */
+    background-color: transparent;
+    transition: background-color 0.5s ease-in-out;
+}
+
+.gallery-item:hover .gallery-cover,
+.gallery-item:focus .gallery-cover,
+.gallery-item:focus-visible .gallery-cover {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+#lightbox {
+    /* position */
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+
+    /* sizing */
+    width: 100%;
+    height: 100%;
+
+    /* flex */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* styling */
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+
+    /* animation */
+    transition: opacity 0.5s ease-in-out;
+    pointer-events: none;
+}
+
+#lightbox.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.lightbox-image {
+    /* sizing */
+    width: var(--page-width);
+    height: var(--page-width);
+
+    /* flex */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-minimize {    
+    /* position */
+    position: fixed;
+    top: var(--header-padding);
+    right: var(--header-padding);
+    z-index: 3;
+
+    /* sizing */
+    width: 15px;
+
+    /* fill */
+    fill: white;
+}
+
+.lightbox-image img {
+    /* sizing */
+    max-width: 100%;
+    max-height: 100%;
+
+    /* styling */
+    border-radius: var(--border-radius);
+    overflow: hidden;
 }
 
 /* youtube */

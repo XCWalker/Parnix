@@ -12,6 +12,20 @@ function mailTo(id, user, domain, subject) {
     document.querySelector("#" + id).href = "mailto:" + user + "@" + domain + "?Subject=" + subject;
 }
 
+// gallery
+function galleryImage(imageURL, alt) {
+    document.getElementById("lightbox-image").src = imageURL;
+    document.getElementById("lightbox-image").alt = alt;
+    document.getElementById("lightbox").classList.add("visible")
+    document.body.classList.add("noscroll");
+}
+
+function hideLightbox() {
+    document.getElementById("lightbox").classList.remove("visible")
+    document.body.classList.remove("noscroll");
+}
+
+
 // youtube api
 const apiKey = "AIzaSyBGF-_q24Hs9nN_ElRrnVMR-i0t0QiuShI"; //CHANGE ME!!!
 const playlistID = "PLY3WBignFwAYor6APrIeJjXfgYdtfKCGZ";
