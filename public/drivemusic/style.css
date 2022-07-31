@@ -465,6 +465,7 @@ footer {
 .social:focus-visible .social-background {
     opacity: 1;
 }
+
 /* sections */
 section {
     margin-bottom: 100px;
@@ -519,6 +520,26 @@ iframe {
     /* spacing */
     margin: calc(var(--header-padding) / 2) var(--header-padding);
     border-radius: var(--border-radius);
+}
+
+.map-container {
+    /* sinzing */
+    width: 100%;
+    height: 400px;
+
+    /* spacing */
+    margin: calc(var(--header-padding) / 2) var(--header-padding);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.map {
+    /* sizing */
+    width: 100%;
+    height: 100%;
+
+    /* image */
+    object-fit: cover;
 }
 
 p.address-info,
@@ -615,7 +636,7 @@ p.contact-info {
     gap: calc(var(--header-padding) * 2);
 
     /* spacing */
-    margin: calc(var(--header-padding) / 2) var(--header-padding);    
+    margin: calc(var(--header-padding) / 2) var(--header-padding);
 }
 
 .gallery-item {
@@ -728,7 +749,7 @@ p.contact-info {
     align-items: center;
 }
 
-.lightbox-minimize {    
+.lightbox-minimize {
     /* position */
     position: fixed;
     top: var(--header-padding);
