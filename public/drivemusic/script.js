@@ -14,15 +14,24 @@ function mailTo(id, user, domain, subject) {
 
 // gallery
 function galleryImage(imageURL, alt) {
-    document.getElementById("lightbox-image").src = imageURL;
-    document.getElementById("lightbox-image").alt = alt;
-    document.getElementById("lightbox").classList.add("visible")
-    document.body.classList.add("noscroll");
-}
-
-function hideLightbox() {
-    document.getElementById("lightbox").classList.remove("visible")
-    document.body.classList.remove("noscroll");
+    console.log(imageURL)
+    console.log(document.getElementById("lightbox-image").src)
+    if (imageURL == null || imageURL == undefined) {
+        document.getElementById("lightbox-image").src = null;
+        document.getElementById("lightbox-image").alt = null;
+        document.getElementById("lightbox").classList.remove("visible");
+        document.body.classList.remove("noscroll");
+    } else if (alt == document.getElementById("lightbox-image").alt) {
+        document.getElementById("lightbox-image").src = null;
+        document.getElementById("lightbox-image").alt = null;
+        document.getElementById("lightbox").classList.remove("visible");
+        document.body.classList.remove("noscroll");
+    } else {
+        document.getElementById("lightbox-image").src = imageURL;
+        document.getElementById("lightbox-image").alt = alt;
+        document.getElementById("lightbox").classList.add("visible")
+        document.body.classList.add("noscroll");
+    }
 }
 
 
@@ -34,7 +43,7 @@ const youtubeTemplate = document.querySelector("[data-youtube-template]");
 const youtubeContainer = document.querySelector("[data-youtube-container]");
 
 function onLoadYoutube() {
-    gapi.client.setApiKey(apiKey); 
+    gapi.client.setApiKey(apiKey);
     gapi.client.load('youtube', 'v3', function () {
 
         var request = gapi.client.youtube.playlistItems.list({
