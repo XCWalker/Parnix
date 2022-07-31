@@ -37,7 +37,7 @@ function galleryImage(imageURL, alt) {
 
 // youtube api
 const apiKey = "AIzaSyBGF-_q24Hs9nN_ElRrnVMR-i0t0QiuShI"; //CHANGE ME!!!
-const playlistID = "PLY3WBignFwAYor6APrIeJjXfgYdtfKCGZ";
+const playlistID = "PLY3WBignFwAZ0uuxGFx-6k8mrga0_oWLP";
 
 const youtubeTemplate = document.querySelector("[data-youtube-template]");
 const youtubeContainer = document.querySelector("[data-youtube-container]");
