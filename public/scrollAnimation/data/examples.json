@@ -1,0 +1,62 @@
+[
+    {
+        "title": "left to right",
+        "catagory": "horizontal",
+        "url": "https://parnix.xcwalker.dev/scrollAnimations/examples/leftRight.html",
+        "color": {
+            "background": "#04052E",
+            "foreground": "#DAE0F2",
+            "border": "#2F52E0"
+        }
+    },
+    {
+        "title": "right to left",
+        "catagory": "horizontal",
+        "url": "https://parnix.xcwalker.dev/scrollAnimations/examples/rightLeft.html",
+        "color": {
+            "background": "#04052E",
+            "foreground": "#DAE0F2",
+            "border": "#2F52E0"
+        }
+    },
+    {
+        "title": "scale",
+        "catagory": "transform",
+        "url": "https://parnix.xcwalker.dev/scrollAnimations/examples/scale.html",
+        "color": {
+            "background": "#04052E",
+            "foreground": "#DAE0F2",
+            "border": "#2F52E0"
+        }
+    },
+    {
+        "title": "skew",
+        "catagory": "transform",
+        "url": "https://parnix.xcwalker.dev/scrollAnimations/examples/skew.html",
+        "color": {
+            "background": "#04052E",
+            "foreground": "#DAE0F2",
+            "border": "#2F52E0"
+        }
+    },
+    {
+        "title": "rotate",
+        "catagory": "transform",
+        "url": "https://parnix.xcwalker.dev/scrollAnimations/examples/rotate.html",
+        "color": {
+            "background": "#04052E",
+            "foreground": "#DAE0F2",
+            "border": "#2F52E0"
+        }
+    },
+    {
+        "title": "translate",
+        "catagory": "transform",
+        "url": "https://parnix.xcwalker.dev/scrollAnimations/examples/translate.html",
+        "color": {
+            "background": "#04052E",
+            "foreground": "#DAE0F2",
+            "border": "#2F52E0"
+        }
+    }
+]

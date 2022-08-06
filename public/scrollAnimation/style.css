@@ -1,0 +1,102 @@
+/** Page Setup **/
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* demo */
+.scroller-item:nth-of-type(even) {
+    background-color: red;
+}
+
+.home {
+    /* position */
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 999;
+
+    /* sizing */
+    width: 150px;
+    height: 40px;
+
+    /* flex */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* styling */
+    background-color: #084B83;
+    border-radius: 10px;
+    
+    /* text */
+    text-decoration: none;
+    color: #fff;
+}
+
+.home:hover,
+.home:focus,
+.home:focus-visible {
+    background-color: transparent;
+    color: #084B83;
+    outline: 4px solid #084B83;
+}
+
+.home:active {
+    background-color: transparent;
+    color: #000;
+    outline: 4px solid #000;
+}
+
+/** Scroller **/
+.scroller-track {
+    /* sizing */
+    height: calc(100vw * 2);
+}
+
+.scroller-camera {
+    /* position */
+    position: sticky;
+    top: 0;
+
+    /* sinzing */
+    width: 100vw;
+    height: 100vh;
+
+    /* overflow */
+    overflow: hidden;
+}
+
+.scroller-frame {
+    /* positioin */
+    position: absolute;
+    /* flex */
+    display: flex;
+
+    /* sizing */
+    height: 100vh;
+    width: 100vw;
+
+    overflow: visible;
+}
+
+.scroller-item {
+
+    /* flex sizing */
+    flex-shrink: 0;
+    flex-grow: 0;
+
+    /* sizing */
+    width: 100vw;
+    height: 100vh;
+
+    /* flex */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scroller-item h1 {
+    /* text */
+    font-size: 4ch;
+}
