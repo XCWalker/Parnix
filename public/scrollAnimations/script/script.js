@@ -63,7 +63,7 @@ function transformScroll(frameID, element, minSize, maxSize, decrementer, direct
   var transformVar5 = transform5;
   var unitVar5 = unit5;
 
-  container.style.height = "200vw"
+  container.style.height = "200vh"
 
   if (element == undefined) {
     var frameContent = frame.querySelector(".scroller-item")
@@ -83,11 +83,12 @@ function transformScroll(frameID, element, minSize, maxSize, decrementer, direct
     unitVar = unit;
   }
 
+  var speed = Math.max(Math.sqrt(window.innerHeight), 25);
   var rect = container.getBoundingClientRect();
   var elemTop = rect.top;
   if (direction == "forwards" || direction == undefined) {
     if (isScrolledIntoView(container, section)) {
-      transformHold = transformVar + "(" + (Math.max(Math.min(Math.round(((document.documentElement.scrollTop - (elemTop + window.pageYOffset)) * 1) / rect.height * 100 * ((maxSize - minSize) / 70)), maxSize), minSize) / decrementer) + unitVar + ")";
+      transformHold = transformVar + "(" + (Math.max(Math.min(Math.round(((document.documentElement.scrollTop - (elemTop + window.pageYOffset)) * 1) / rect.height * 100 * ((maxSize - minSize) / speed)), maxSize), minSize) / decrementer) + unitVar + ")";
     } else if (!isScrolledIntoView(container, section) && elemTop >= 0) {
       transformHold = transformVar + "(" + (minSize / decrementer) + unitVar + ")"
     } else if (!isScrolledIntoView(container, section) && elemTop <= 0) {
@@ -95,7 +96,7 @@ function transformScroll(frameID, element, minSize, maxSize, decrementer, direct
     }
   } else if (direction == "backwards") {
     if (isScrolledIntoView(container, section)) {
-      transformHold = transformVar + "(" + (Math.max(Math.min(Math.round(minSize - ((document.documentElement.scrollTop - (elemTop + window.pageYOffset)) * 1) / rect.height * 100 * ((minSize - maxSize) / 70)), minSize), maxSize) / decrementer) + unitVar + ")";
+      transformHold = transformVar + "(" + (Math.max(Math.min(Math.round(minSize - ((document.documentElement.scrollTop - (elemTop + window.pageYOffset)) * 1) / rect.height * 100 * ((minSize - maxSize) / speed)), minSize), maxSize) / decrementer) + unitVar + ")";
     } else if (!isScrolledIntoView(container, section) && elemTop >= 0) {
       transformHold = transformVar + "(" + (minSize / decrementer) + unitVar + ")"
     } else if (!isScrolledIntoView(container, section) && elemTop <= 0) {
@@ -106,7 +107,7 @@ function transformScroll(frameID, element, minSize, maxSize, decrementer, direct
   if (transform1 != undefined) {
     if (direction1 == "forwards" || direction1 == undefined) {
       if (isScrolledIntoView(container, section)) {
-        transformHold1 = transformVar1 + "(" + (Math.max(Math.min(Math.round(((document.documentElement.scrollTop - (elemTop + window.pageYOffset)) * 1) / rect.height * 100 * ((maxSize1 - minSize1) / 70 + .16)), maxSize1), minSize1) / decrementer1) + unitVar1 + ")";
+        transformHold1 = transformVar1 + "(" + (Math.max(Math.min(Math.round(((document.documentElement.scrollTop - (elemTop + window.pageYOffset)) * 1) / rect.height * 100 * ((maxSize1 - minSize1) / speed + .16)), maxSize1), minSize1) / decrementer1) + unitVar1 + ")";
       } else if (!isScrolledIntoView(container, section) && elemTop >= 0) {
         transformHold1 = transformVar1 + "(" + (minSize1 / decrementer1) + unitVar1 + ")"
       } else if (!isScrolledIntoView(container, section) && elemTop <= 0) {
@@ -114,7 +115,7 @@ function transformScroll(frameID, element, minSize, maxSize, decrementer, direct
       }
     } else if (direction1 == "backwards") {
       if (isScrolledIntoView(container, section)) {
-        transformHold1 = transformVar1 + "(" + (Math.max(Math.min(Math.round(minSize1 - ((document.documentElement.scrollTop - (elemTop + window.pageYOffset)) * 1) / rect.height * 100 * ((minSize1 - maxSize1) / 70 + .16)), minSize1), maxSize1) / decrementer1) + unitVar1 + ")";
+        transformHold1 = transformVar1 + "(" + (Math.max(Math.min(Math.round(minSize1 - ((document.documentElement.scrollTop - (elemTop + window.pageYOffset)) * 1) / rect.height * 100 * ((minSize1 - maxSize1) / speed + .16)), minSize1), maxSize1) / decrementer1) + unitVar1 + ")";
       } else if (!isScrolledIntoView(container, section) && elemTop >= 0) {
         transformHold1 = transformVar1 + "(" + (minSize1 / decrementer1) + unitVar1 + ")"
       } else if (!isScrolledIntoView(container, section) && elemTop <= 0) {
@@ -126,7 +127,7 @@ function transformScroll(frameID, element, minSize, maxSize, decrementer, direct
   if (transform2 != undefined) {
     if (direction2 == "forwards" || direction2 == undefined) {
       if (isScrolledIntoView(container, section)) {
-        transformHold2 = transformVar2 + "(" + (Math.max(Math.min(Math.round(((document.documentElement.scrollTop - (elemTop + window.pageYOffset)) * 1) / rect.height * 100 * ((maxSize2 - minSize2) / 70 + .16)), maxSize2), minSize2) / decrementer2) + unitVar2 + ")";
+        transformHold2 = transformVar2 + "(" + (Math.max(Math.min(Math.round(((document.documentElement.scrollTop - (elemTop + window.pageYOffset)) * 1) / rect.height * 100 * ((maxSize2 - minSize2) / speed + .16)), maxSize2), minSize2) / decrementer2) + unitVar2 + ")";
       } else if (!isScrolledIntoView(container, section) && elemTop >= 0) {
         transformHold2 = transformVar2 + "(" + (minSize2 / decrementer2) + unitVar2 + ")"
       } else if (!isScrolledIntoView(container, section) && elemTop <= 0) {
@@ -134,7 +135,7 @@ function transformScroll(frameID, element, minSize, maxSize, decrementer, direct
       }
     } else if (direction2 == "backwards") {
       if (isScrolledIntoView(container, section)) {
-        transformHold2 = transformVar2 + "(" + (Math.max(Math.min(Math.round(minSize2 - ((document.documentElement.scrollTop - (elemTop + window.pageYOffset)) * 1) / rect.height * 100 * ((minSize2 - maxSize2) / 70 + .16)), minSize2), maxSize2) / decrementer2) + unitVar2 + ")";
+        transformHold2 = transformVar2 + "(" + (Math.max(Math.min(Math.round(minSize2 - ((document.documentElement.scrollTop - (elemTop + window.pageYOffset)) * 1) / rect.height * 100 * ((minSize2 - maxSize2) / speed + .16)), minSize2), maxSize2) / decrementer2) + unitVar2 + ")";
       } else if (!isScrolledIntoView(container, section) && elemTop >= 0) {
         transformHold2 = transformVar2 + "(" + (minSize2 / decrementer2) + unitVar2 + ")"
       } else if (!isScrolledIntoView(container, section) && elemTop <= 0) {
@@ -146,7 +147,7 @@ function transformScroll(frameID, element, minSize, maxSize, decrementer, direct
   if (transform3 != undefined) {
     if (direction3 == "forwards" || direction3 == undefined) {
       if (isScrolledIntoView(container, section)) {
-        transformHold3 = transformVar3 + "(" + (Math.max(Math.min(Math.round(((document.documentElement.scrollTop - (elemTop + window.pageYOffset)) * 1) / rect.height * 100 * ((maxSize3 - minSize3) / 70 + .16)), maxSize3), minSize3) / decrementer3) + unitVar3 + ")";
+        transformHold3 = transformVar3 + "(" + (Math.max(Math.min(Math.round(((document.documentElement.scrollTop - (elemTop + window.pageYOffset)) * 1) / rect.height * 100 * ((maxSize3 - minSize3) / speed + .16)), maxSize3), minSize3) / decrementer3) + unitVar3 + ")";
       } else if (!isScrolledIntoView(container, section) && elemTop >= 0) {
         transformHold3 = transformVar3 + "(" + (minSize3 / decrementer3) + unitVar3 + ")"
       } else if (!isScrolledIntoView(container, section) && elemTop <= 0) {
@@ -154,7 +155,7 @@ function transformScroll(frameID, element, minSize, maxSize, decrementer, direct
       }
     } else if (direction3 == "backwards") {
       if (isScrolledIntoView(container, section)) {
-        transformHold3 = transformVar3 + "(" + (Math.max(Math.min(Math.round(minSize3 - ((document.documentElement.scrollTop - (elemTop + window.pageYOffset)) * 1) / rect.height * 100 * ((minSize3 - maxSize3) / 70 + .16)), minSize3), maxSize3) / decrementer3) + unitVar3 + ")";
+        transformHold3 = transformVar3 + "(" + (Math.max(Math.min(Math.round(minSize3 - ((document.documentElement.scrollTop - (elemTop + window.pageYOffset)) * 1) / rect.height * 100 * ((minSize3 - maxSize3) / speed + .16)), minSize3), maxSize3) / decrementer3) + unitVar3 + ")";
       } else if (!isScrolledIntoView(container, section) && elemTop >= 0) {
         transformHold3 = transformVar3 + "(" + (minSize3 / decrementer3) + unitVar3 + ")"
       } else if (!isScrolledIntoView(container, section) && elemTop <= 0) {
@@ -166,7 +167,7 @@ function transformScroll(frameID, element, minSize, maxSize, decrementer, direct
   if (transform4 != undefined) {
     if (direction4 == "forwards" || direction4 == undefined) {
       if (isScrolledIntoView(container, section)) {
-        transformHold4 = transformVar4 + "(" + (Math.max(Math.min(Math.round(((document.documentElement.scrollTop - (elemTop + window.pageYOffset)) * 1) / rect.height * 100 * ((maxSize4 - minSize4) / 70 + .16)), maxSize4), minSize4) / decrementer4) + unitVar4 + ")";
+        transformHold4 = transformVar4 + "(" + (Math.max(Math.min(Math.round(((document.documentElement.scrollTop - (elemTop + window.pageYOffset)) * 1) / rect.height * 100 * ((maxSize4 - minSize4) / speed + .16)), maxSize4), minSize4) / decrementer4) + unitVar4 + ")";
       } else if (!isScrolledIntoView(container, section) && elemTop >= 0) {
         transformHold4 = transformVar4 + "(" + (minSize4 / decrementer4) + unitVar4 + ")"
       } else if (!isScrolledIntoView(container, section) && elemTop <= 0) {
@@ -174,7 +175,7 @@ function transformScroll(frameID, element, minSize, maxSize, decrementer, direct
       }
     } else if (direction4 == "backwards") {
       if (isScrolledIntoView(container, section)) {
-        transformHold4 = transformVar4 + "(" + (Math.max(Math.min(Math.round(minSize4 - ((document.documentElement.scrollTop - (elemTop + window.pageYOffset)) * 1) / rect.height * 100 * ((minSize4 - maxSize4) / 70 + .16)), minSize4), maxSize4) / decrementer4) + unitVar4 + ")";
+        transformHold4 = transformVar4 + "(" + (Math.max(Math.min(Math.round(minSize4 - ((document.documentElement.scrollTop - (elemTop + window.pageYOffset)) * 1) / rect.height * 100 * ((minSize4 - maxSize4) / speed + .16)), minSize4), maxSize4) / decrementer4) + unitVar4 + ")";
       } else if (!isScrolledIntoView(container, section) && elemTop >= 0) {
         transformHold4 = transformVar4 + "(" + (minSize4 / decrementer4) + unitVar4 + ")"
       } else if (!isScrolledIntoView(container, section) && elemTop <= 0) {
@@ -186,7 +187,7 @@ function transformScroll(frameID, element, minSize, maxSize, decrementer, direct
   if (transform5 != undefined) {
     if (direction5 == "forwards" || direction5 == undefined) {
       if (isScrolledIntoView(container, section)) {
-        transformHold5 = transformVar5 + "(" + (Math.max(Math.min(Math.round(((document.documentElement.scrollTop - (elemTop + window.pageYOffset)) * 1) / rect.height * 100 * ((maxSize5 - minSize5) / 70 + .16)), maxSize5), minSize5) / decrementer5) + unitVar5 + ")";
+        transformHold5 = transformVar5 + "(" + (Math.max(Math.min(Math.round(((document.documentElement.scrollTop - (elemTop + window.pageYOffset)) * 1) / rect.height * 100 * ((maxSize5 - minSize5) / speed + .16)), maxSize5), minSize5) / decrementer5) + unitVar5 + ")";
       } else if (!isScrolledIntoView(container, section) && elemTop >= 0) {
         transformHold5 = transformVar5 + "(" + (minSize5 / decrementer5) + unitVar5 + ")"
       } else if (!isScrolledIntoView(container, section) && elemTop <= 0) {
@@ -194,7 +195,7 @@ function transformScroll(frameID, element, minSize, maxSize, decrementer, direct
       }
     } else if (direction5 == "backwards") {
       if (isScrolledIntoView(container, section)) {
-        transformHold5 = transformVar5 + "(" + (Math.max(Math.min(Math.round(minSize5 - ((document.documentElement.scrollTop - (elemTop + window.pageYOffset)) * 1) / rect.height * 100 * ((minSize5 - maxSize5) / 70 + .16)), minSize5), maxSize5) / decrementer5) + unitVar5 + ")";
+        transformHold5 = transformVar5 + "(" + (Math.max(Math.min(Math.round(minSize5 - ((document.documentElement.scrollTop - (elemTop + window.pageYOffset)) * 1) / rect.height * 100 * ((minSize5 - maxSize5) / speed + .16)), minSize5), maxSize5) / decrementer5) + unitVar5 + ")";
       } else if (!isScrolledIntoView(container, section) && elemTop >= 0) {
         transformHold5 = transformVar5 + "(" + (minSize5 / decrementer5) + unitVar5 + ")"
       } else if (!isScrolledIntoView(container, section) && elemTop <= 0) {
