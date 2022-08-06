@@ -542,7 +542,8 @@ iframe {
 }
 
 p.address-info,
-p.contact-info {
+p.contact-info,
+p.rehersal-info {
     /* text */
     font-size: 15px;
     font-weight: 300;
@@ -577,8 +578,9 @@ p.contact-info {
     display: flex;
     flex-direction: column;
 
-    /* spacing */
+    /* sizing */
     margin: calc(var(--header-padding) / 2) var(--header-padding);
+    width: 360px;
 
     /* styling */
     background-color: var(--header-background);
