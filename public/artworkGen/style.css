@@ -1,15 +1,14 @@
 /* page setup */
 body {
     margin: 0;
-
-    /* background */
-    background-color: black;
 }
 
 *,
 *::after,
 *::before {
     box-sizing: border-box;
+
+    font-family: 'Montserrat', sans-serif;
 }
 
 /* output */
@@ -72,9 +71,9 @@ canvas {
     /* flex */
 }
 
-.canvas.scaled .container{
+.canvas.scaled .container {
     /* transform */
-    transform: scale(0.5);
+    transform: scale(0.4);
 
     /* spacing */
     margin: 0 auto;
@@ -96,15 +95,90 @@ canvas {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 20px;
 
     /* variables */
     --padding: 90px;
     --logo-size: 63px;
-    --text-size: 40px;
+    --text-size: 500px;
+}
+
+.centreText {
+    /* flex */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
 
 .canvas h1 {
     font-size: var(--text-size);
+    line-height: var(--text-size);
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+
+    /* flex */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.canvas h1.halfText {
+    /* position */
+    position: absolute;
+    left: 0;
+    right: 0;
+
+    /* sizing */
+    width: 100%;
+
+    /* styling */
+    background: #00b09b;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #96c93d, #00b09b);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #96c93d, #00b09b);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+}
+
+.canvas .centre {
+    /* sizing */
+    height: calc(var(--text-size) - 140px);
+
+    /* flex */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.canvas .half {
+    /* position */
+    position: relative;
+
+    /* sizing */
+    height: calc((var(--text-size) / 2) - 80px);
+    width: 100%;
+    overflow: hidden;
+}
+
+.canvas .top h1.halfText {
+    /* position */
+    top: -70px;
+    bottom: auto;
+}
+
+.canvas .bottom h1.halfText {
+    /* position */
+    top: auto;
+    bottom: -70px;
 }
 
 .canvas .upper,
@@ -148,7 +222,13 @@ canvas {
     z-index: -1;
 
     /* styling */
-    background-color: grey;
+    /* background */
+    background: #000000;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #434343, #000000);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #434343, #000000);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .canvas .background img {

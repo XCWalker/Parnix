@@ -15,3 +15,17 @@ function saveImage() {
 function closeImage() {
     document.querySelector('section#output').classList.remove('visible');
 }
+
+function updateBigText(text) {
+    const textElem = document.querySelector("#bigText")
+    const textElem1 = document.querySelector("#bigText1")
+    const textElem2 = document.querySelector("#bigText2")
+    const textElem3 = document.querySelector("#bigText3")
+    const textElem4 = document.querySelector("#bigText4")
+
+    textElem.textContent = text;
+    textElem1.textContent = text;
+    textElem2.textContent = text;
+    textElem3.textContent = text;
+    textElem4.textContent = text;
+}
